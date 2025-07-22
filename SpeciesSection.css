@@ -1,0 +1,58 @@
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.species-card {
+  height: 400px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+}
+
+.species-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0) 90%);
+  padding: 1.5rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card-overlay h3 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.card-overlay h4 {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.card-overlay p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.4s ease;
+}
+
+.species-card:hover .card-overlay p {
+  opacity: 1;
+  max-height: 100px;
+}
